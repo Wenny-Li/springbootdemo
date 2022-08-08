@@ -1,0 +1,59 @@
+debug: false
+http:
+encoding:
+#harset: utf-8
+force: true
+enabled: true
+
+#公共配置
+spring:
+  thymeleaf:
+    cache: false
+  messages:
+    basename: i18n.login
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Wl123456
+    url: jdbc:mysql://127.0.0.1:3306/mybatis_plus?useUnicode=true&characterEncoding=UTF-8&useSSL=true&serverTimezone=UTC
+  mvc:
+    date-format: YYYY-MM-DD
+  profiles:
+    active: dev #使用名为pro的配置，这里可以切换成dev
+  mail:
+    # 配置 SMTP 服务器地址
+    host: smtp.gmail.com
+    # 发送者邮箱
+    username: liweiwei.sg@gmail.com
+    # 配置密码，注意不是真正的密码，而是刚刚申请到的授权码
+    password: Hanshiyun10
+    # 端口号465或587
+    port: 587
+    # 默认的邮件编码为UTF-8
+    default-encoding: UTF-8
+    # 配置SSL 加密工厂
+    properties:
+      mail:
+        smtp:
+          socketFactoryClass: javax.net.ssl.SSLSocketFactory
+        #表示开启 DEBUG 模式，这样，邮件发送过程的日志会在控制台打印出来，方便排查错误
+        debug: true
+server:
+  servlet:
+    context-path: /wu
+
+
+
+#开发环境配置
+#spring:
+#  profiles: dev #profiles属性代表配置的名称
+
+#server:
+#  port: 9000
+---
+#生产环境配置
+#spring:
+#  profiles: pro
+
+#server:
+#  port: 9001

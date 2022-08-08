@@ -1,0 +1,6 @@
+#开发环境配置
+spring:
+  profiles: dev #profiles属性代表配置的名称
+
+server:
+  port: 9000
